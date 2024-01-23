@@ -203,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns <span class="co">#seaborn library for data visualiazation </span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/pic16b-ucla/24W/main/datasets/palmer_penguins.csv"</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> pd.read_csv(url)</span>
@@ -347,9 +347,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="bar-chart">Bar Chart</h2>
 <p>In order to create data visualizations, we should first explore the dataset and understand the variables included as well as their relationship. For instance, I have noticed there are different categories of penguins and decided to investigate the distribution of penguins with bar chart.</p>
 <div id="cell-5" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(x <span class="op">=</span> <span class="st">'Species'</span>, data <span class="op">=</span> penguins)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribution of Penguin Species'</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#countplot function is used for showing the counts of observations in each categorical bin using bars</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(x <span class="op">=</span> <span class="st">'Species'</span>, data <span class="op">=</span> penguins)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribution of Penguin Species'</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -364,9 +365,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="scatterplot">Scatterplot</h2>
 <p>As flipper length and body mass are both important components for a penguine, I am interested in whether there is any relationship between these two variables. To find such pattern between two quantitative variables, scatterplot is an useful tool.</p>
 <div id="cell-8" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">'Flipper Length (mm)'</span>, y<span class="op">=</span><span class="st">'Body Mass (g)'</span>, hue<span class="op">=</span><span class="st">'Species'</span>, data<span class="op">=</span>penguins)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Flipper Length vs Body Mass by Species'</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.scatterplot is a function from the Seaborn library in Python, used for creating scatterplots</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">'Flipper Length (mm)'</span>, y<span class="op">=</span><span class="st">'Body Mass (g)'</span>, hue<span class="op">=</span><span class="st">'Species'</span>, data<span class="op">=</span>penguins)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Flipper Length vs Body Mass by Species'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -375,15 +377,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>From the graph, we can oberve that there exists a positive correlations between flipper length and body mass in all three species, while the correlation strength could be explored further.</p>
 </section>
 <section id="histogram" class="level2">
 <h2 class="anchored" data-anchor-id="histogram">Histogram</h2>
-<div id="cell-10" class="cell" data-execution_count="15">
+<p>A histogram could also be used to represent the distribution of a numerical dataset, especially when we want to compare distribution of a variable across different groups. From the above scatterplot, We can see that both flipper length and body mass vary across different groups such that we can use histogram to find the distribution.</p>
+<div id="cell-11" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>penguins, x<span class="op">=</span><span class="st">'Body Mass (g)'</span>, hue<span class="op">=</span><span class="st">'Species'</span>, element<span class="op">=</span><span class="st">'step'</span>, palette<span class="op">=</span><span class="st">'Set2'</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of Body Mass (g) by Species'</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>) </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.histplot is a function from the Seaborn library used to create histograms. </span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>penguins, x<span class="op">=</span><span class="st">'Body Mass (g)'</span>, hue<span class="op">=</span><span class="st">'Species'</span>, element<span class="op">=</span><span class="st">'step'</span>, palette<span class="op">=</span><span class="st">'Set2'</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of Body Mass (g) by Species'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>) </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -392,14 +398,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-<section id="boxplot" class="level2">
-<h2 class="anchored" data-anchor-id="boxplot">Boxplot</h2>
-<div id="cell-12" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span><span class="st">'Species'</span>, y<span class="op">=</span><span class="st">'Culmen Length (mm)'</span>, data<span class="op">=</span>penguins, palette<span class="op">=</span><span class="st">'Set1'</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of Culmen Length (mm) by Species'</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>From the histogram of body mass(g) by species, we can observe that Gentoo has greater body mass than Adelie and Chinstrap in general</p>
+<div id="cell-13" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>) </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.histplot is a function from the Seaborn library used to create histograms. </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>penguins, x<span class="op">=</span><span class="st">'Flipper Length (mm)'</span>, hue<span class="op">=</span><span class="st">'Species'</span>, element<span class="op">=</span><span class="st">'step'</span>, palette<span class="op">=</span><span class="st">'Set2'</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of Flipper Length (mm) by Species'</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>) </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -408,129 +415,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-13" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> summary_stats_table(qual_cols, quan_cols):</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">    This function returns a table of summary statistics for the penguins dataframe</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> penguins.groupby(qual_cols)[quan_cols].aggregate([np.mean, np.std, np.median])</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Simplifying the species names</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>penguins[<span class="st">"Species"</span>] <span class="op">=</span> penguins[<span class="st">"Species"</span>].<span class="bu">str</span>.split().<span class="bu">str</span>.get(<span class="dv">0</span>)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Applying the function to get the summary statistics table</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>summary_table <span class="op">=</span> summary_stats_table([<span class="st">'Species'</span>, <span class="st">'Island'</span>], [<span class="st">'Culmen Length (mm)'</span>, <span class="st">'Flipper Length (mm)'</span>, <span class="st">'Body Mass (g)'</span>])</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>summary_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<p>From the histogram of flipper length (mm) by species, we can observe that Gentoo has greater flipper length than Adelie and Chinstrap in general as well.</p>
+</section>
+<section id="boxplot" class="level2">
+<h2 class="anchored" data-anchor-id="boxplot">Boxplot</h2>
+<p>In addition, we can also understand the distribution of data through boxplot, which is a standardized way of displaying the distribution based on a five-number summary: minimum, first quartile (Q1), median, third quartile (Q3), and maximum. For instance, we can investigate the culmen length of each group through box plot.</p>
+<div id="cell-16" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.boxplot is a function in the Seaborn library used to create boxplots. </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span><span class="st">'Species'</span>, y<span class="op">=</span><span class="st">'Culmen Length (mm)'</span>, data<span class="op">=</span>penguins, palette<span class="op">=</span><span class="st">'Set1'</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of Culmen Length (mm) by Species'</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
 <div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th colspan="3" data-quarto-table-cell-role="th" data-halign="left">Culmen Length (mm)</th>
-<th colspan="3" data-quarto-table-cell-role="th" data-halign="left">Flipper Length (mm)</th>
-<th colspan="3" data-quarto-table-cell-role="th" data-halign="left">Body Mass (g)</th>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">mean</th>
-<th data-quarto-table-cell-role="th">std</th>
-<th data-quarto-table-cell-role="th">median</th>
-<th data-quarto-table-cell-role="th">mean</th>
-<th data-quarto-table-cell-role="th">std</th>
-<th data-quarto-table-cell-role="th">median</th>
-<th data-quarto-table-cell-role="th">mean</th>
-<th data-quarto-table-cell-role="th">std</th>
-<th data-quarto-table-cell-role="th">median</th>
-</tr>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Species</th>
-<th data-quarto-table-cell-role="th">Island</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td rowspan="3" data-quarto-table-cell-role="th" data-valign="top">Adelie</td>
-<td data-quarto-table-cell-role="th">Biscoe</td>
-<td>38.975000</td>
-<td>2.480916</td>
-<td>38.70</td>
-<td>188.795455</td>
-<td>6.729247</td>
-<td>189.5</td>
-<td>3709.659091</td>
-<td>487.733722</td>
-<td>3750.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">Dream</td>
-<td>38.501786</td>
-<td>2.465359</td>
-<td>38.55</td>
-<td>189.732143</td>
-<td>6.585083</td>
-<td>190.0</td>
-<td>3688.392857</td>
-<td>455.146437</td>
-<td>3575.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">Torgersen</td>
-<td>38.950980</td>
-<td>3.025318</td>
-<td>38.90</td>
-<td>191.196078</td>
-<td>6.232238</td>
-<td>191.0</td>
-<td>3706.372549</td>
-<td>445.107940</td>
-<td>3700.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">Chinstrap</td>
-<td data-quarto-table-cell-role="th">Dream</td>
-<td>48.833824</td>
-<td>3.339256</td>
-<td>49.55</td>
-<td>195.823529</td>
-<td>7.131894</td>
-<td>196.0</td>
-<td>3733.088235</td>
-<td>384.335081</td>
-<td>3700.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">Gentoo</td>
-<td data-quarto-table-cell-role="th">Biscoe</td>
-<td>47.504878</td>
-<td>3.081857</td>
-<td>47.30</td>
-<td>217.186992</td>
-<td>6.484976</td>
-<td>216.0</td>
-<td>5076.016260</td>
-<td>504.116237</td>
-<td>5000.0</td>
-</tr>
-</tbody>
-</table>
-
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
 </div>
+<p>From the boxplot, we can observe that Chinstrap has the greatest median among three species such that we could conclude that Chinstrap has the greatest culmen length compared to the other two species. Meanwhile, Adelie has the least median such that it has the least culmen length overall.</p>
 
 
 </section>
