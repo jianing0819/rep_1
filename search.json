@@ -63,6 +63,13 @@
     "text": "Boxplot\nIn addition, we can also understand the distribution of data through boxplot, which is a standardized way of displaying the distribution based on a five-number summary: minimum, first quartile (Q1), median, third quartile (Q3), and maximum. For instance, we can investigate the culmen length of each group through box plot.\n\nplt.figure(figsize=(6, 6))\n#sns.boxplot is a function in the Seaborn library used to create boxplots. \nsns.boxplot(x='Species', y='Culmen Length (mm)', data=penguins, palette='Set1')\nplt.title('Boxplot of Culmen Length (mm) by Species')\nplt.show()\n\n\n\n\n\n\n\n\nFrom the boxplot, we can observe that Chinstrap has the greatest median among three species such that we could conclude that Chinstrap has the greatest culmen length compared to the other two species. Meanwhile, Adelie has the least median such that it has the least culmen length overall."
   },
   {
+    "objectID": "posts/Jianing/index.html#conclusion",
+    "href": "posts/Jianing/index.html#conclusion",
+    "title": "Homework 0",
+    "section": "Conclusion",
+    "text": "Conclusion\nIn this tutorial, we explored various ways to visualize the Palmer Penguins dataset. By employing different types of plots, we gained valuable insights into the data. Remember, the key to effective data visualization lies in choosing the right type of plot that best represents the data’s story!"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "myblog",
